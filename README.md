@@ -64,8 +64,8 @@ Follow these steps to set up the project on your PC:
 	- Click on the map where the actual robot is located and drag the large green arrow toward the direction where the robot is facing.
  	- Launch keyboard teleoperation node to precisely locate the robot on the map.
 	```bash
- 		rosrun teleop_twist_keyboard teleop_twist_keyboard.py
-   ```
+ 	rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+ 	```
 	- Move the robot back and forth a bit to collect the surrounding environment information and narrow down the estimated location of the robot on the map which is displayed with tiny red arrows.
 
 	![localisation-gif](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/5be56b12-f398-44fe-85ba-5aa128aec5eb)
