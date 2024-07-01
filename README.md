@@ -9,6 +9,7 @@ This project simulates an omniwheel mobile robot performing autonomous parking i
 1. **URDF Creation:** 
    - Created a URDF file using the SolidWorks to URDF conversion plugin.
    - Added a LiDAR sensor and control plugins to the URDF.
+   ![Gazebo](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/59167cee-e64d-424b-8e2a-c0ce48c9a6f1)
 2. **Autonomous Parking:**
    - Utilized the ROS navigation stack.
    - Created a map of the world using `slam_gmapping`.
