@@ -51,21 +51,29 @@ Follow these steps to set up the project on your PC:
 	roslaunch omniwheel display.launch
 	```
 	- An RViz window will open.
+
 	![RViz](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/b5e418a9-438d-4198-9d2e-1dc18e8abcf4)
 	- Perform **Initial Pose Estimation** using the `2D Pose Estimate` button in the RViz menu.
 	![Screenshot 2024-07-01 103830](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/a00ab99a-d732-4308-9389-6ec73db3b2d9)
 	- Click on the map where the actual robot is located and drag the large green arrow toward the direction where the robot is facing.
  	- Launch keyboard teleoperation node to precisely locate the robot on the map.
-	```bash
- 	rosrun teleop_twist_keyboard teleop_twist_keyboard.py
-     ```
+		```bash
+ 		rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+        	```
 	- Move the robot back and forth a bit to collect the surrounding environment information and narrow down the estimated location of the robot on the map which is displayed with tiny red arrows.
+
 	![localisation-gif](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/5be56b12-f398-44fe-85ba-5aa128aec5eb)
+
 	- Terminate the keyboard teleoperation node by entering `Ctrl` + `C` to the teleop node terminal in order to prevent different cmd_vel values are published from multiple nodes during Navigation.
+
 	- **Set the navigation goal** using the `2D Nav Goal` button in the RViz menu.
+
 	![Screenshot 2024-07-01 103850](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/496d30e6-8dde-44c0-b0d3-48446c595ddf)
+
 	- Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
 	- As soon as x, y, θ are set, robot will start moving to the destination immediately.
+
+	![Rviz_nav](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/6083cb28-7794-4ea6-9477-9a80f7c0b4f2)
 
 ## Features
 
