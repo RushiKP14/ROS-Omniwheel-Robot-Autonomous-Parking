@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="omnirobot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <!--<link name="dummy_link" />
+
+  <joint name="dummy_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="dummy_link"/>
+        <child link="base_link"/>        
+    </joint>-->
+
+  <link name="base_footprint" />
+
+  <joint name="base_joint" type="fixed">
+        <origin xyz="0 0 -0.03" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="base_footprint"/>        
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="3.99413955847242E-18 0 -0.0150878711000441"
+        rpy="0 0 0" />
+      <mass
+        value="0.648903981332531" />
+      <inertia
+        ixx="0.00120725528832363"
+        ixy="2.84550130718241E-19"
+        ixz="-2.6107198212369E-21"
+        iyy="0.00120725528832363"
+        iyz="1.01221713112364E-20"
+        izz="0.00231815291316683" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Wheel_1_Link">
+    <inertial>
+      <origin
+        xyz="-7.50681883682214E-07 -8.01988334721108E-06 -0.00900540775378417"
+        rpy="0 0 0" />
+      <mass
+        value="0.0063389742226256" />
+      <inertia
+        ixx="5.97079725462209E-07"
+        ixy="-1.89581385813455E-10"
+        ixz="-3.08371655198991E-11"
+        iyy="5.96567181107758E-07"
+        iyz="-2.23850355377591E-10"
+        izz="9.07755384069363E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_1_j"
+    type="continuous">
+    <origin
+      xyz="0.0837132034355964 -0.0837132034355966 -0.02"
+      rpy="1.5707963267949 0 0.785398163397448" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_1_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R1_1_Link">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-17 1.12410081243297E-15 2.16518369596311E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341278E-08"
+        ixy="-3.30872245021211E-24"
+        ixz="-2.55909002008593E-24"
+        iyy="3.05874747341278E-08"
+        iyz="-2.06795153138257E-24"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_1_j"
+    type="continuous">
+    <origin
+      xyz="-0.013365552883044 -0.000283698967440462 -0.00249999999999967"
+      rpy="1.59201924666332 -1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R1_1_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R2_1_Link">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-17 1.60982338570648E-15 -1.9838664822025E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341278E-08"
+        ixy="1.05982515983357E-24"
+        ixz="8.27180612553028E-25"
+        iyy="3.05874747341277E-08"
+        iyz="-9.04728794979874E-26"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_1_j"
+    type="continuous">
+    <origin
+      xyz="-0.000283700151411936 0.0133655528579111 -0.00249999999999958"
+      rpy="0.0212229198684158 1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R2_1_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R3_1_Link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 1.16573417585641E-15 -1.98386679436599E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341278E-08"
+        ixy="4.96308367531817E-24"
+        ixz="-3.03730381171815E-24"
+        iyy="3.05874747341278E-08"
+        iyz="1.008126371549E-24"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R3_1_j"
+    type="continuous">
+    <origin
+      xyz="0.0133655528579109 0.000283700151409928 -0.0024999999999996"
+      rpy="1.54957340692648 1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R3_1_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R4_1_Link">
+    <inertial>
+      <origin
+        xyz="-4.16333634234434E-17 1.63410951437015E-15 1.98386648497806E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341271E-08"
+        ixy="1.80945758995975E-25"
+        ixz="-6.61744490042422E-24"
+        iyy="3.05874747341271E-08"
+        iyz="-1.24077091882954E-24"
+        izz="1.65114577571933E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R4_1_j"
+    type="continuous">
+    <origin
+      xyz="0.00028369715467777 -0.013365552921522 -0.00249999999999968"
+      rpy="3.12036973372138 -1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R4_1_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R5_1_Link">
+    <inertial>
+      <origin
+        xyz="8.32667268468867E-17 5.30131494258512E-15 1.69291381746373E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341277E-08"
+        ixy="0"
+        ixz="1.65436122510606E-24"
+        iyy="3.05874747341277E-08"
+        iyz="-8.27180612553028E-25"
+        izz="1.65114577571944E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R5_1_j"
+    type="continuous">
+    <origin
+      xyz="-0.009651475273773 0.00925027102378738 -0.0154999999999996"
+      rpy="0.806621083265865 -1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R5_1_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R6_1_Link">
+    <inertial>
+      <origin
+        xyz="1.37768546570882E-11 -2.70055364737232E-08 -1.49205418642495E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341276E-08"
+        ixy="3.30872245021211E-23"
+        ixz="1.11669382694659E-23"
+        iyy="3.05874747341276E-08"
+        iyz="4.96308367531817E-24"
+        izz="1.65114577571943E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R6_1_j"
+    type="continuous">
+    <origin
+      xyz="0.00925803067535153 0.00966179387408584 -0.0154999999862226"
+      rpy="0.765703525341687 1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R6_1_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R7_1_Link">
+    <inertial>
+      <origin
+        xyz="-1.2490009027033E-16 -3.09891001748497E-14 -2.20181192445157E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341273E-08"
+        ixy="-1.65436122510606E-24"
+        ixz="-4.13590306276514E-24"
+        iyy="3.05874747341273E-08"
+        iyz="-4.54949336904165E-24"
+        izz="1.65114577571936E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R7_1_j"
+    type="continuous">
+    <origin
+      xyz="0.00965147785297885 -0.00925026833272314 -0.0154999999999996"
+      rpy="2.33497157032392 1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R7_1_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R8_1_Link">
+    <inertial>
+      <origin
+        xyz="1.3778311824808E-11 1.27311119707679E-05 2.19477151502806E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341276E-08"
+        ixy="1.65436122510606E-24"
+        ixz="2.06795153138257E-24"
+        iyy="3.05874747341276E-08"
+        iyz="4.96308367531817E-24"
+        izz="1.65114577571944E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R8_1_j"
+    type="continuous">
+    <origin
+      xyz="-0.00926610256456328 -0.00963626434610507 -0.015500000013778"
+      rpy="2.37588912824811 -1.5707963267949 0" />
+    <parent
+      link="Wheel_1_Link" />
+    <child
+      link="R8_1_Link" />
+    <axis
+      xyz="0 0.00152828121270965 -0.999998832177586" />
+  </joint>
+  <link
+    name="Wheel_2_Link">
+    <inertial>
+      <origin
+        xyz="-7.99975482271287E-06 9.20067716002684E-07 -0.00900540410044859"
+        rpy="0 0 0" />
+      <mass
+        value="0.0063389736192726" />
+      <inertia
+        ixx="5.96632656166934E-07"
+        ixy="1.54212713174445E-10"
+        ixz="-2.23098984085339E-10"
+        iyy="5.97162219914776E-07"
+        iyz="3.55721447944448E-11"
+        izz="9.07903412432404E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_2_j"
+    type="continuous">
+    <origin
+      xyz="0.0837132034355965 0.0837132034355966 -0.02"
+      rpy="1.5707963267949 0 2.35619449019235" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_2_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R1_2_Link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -5.89805981832114E-17 2.16518352136319E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341281E-08"
+        ixy="7.51749514019932E-25"
+        ixz="-3.30872245021211E-24"
+        iyy="3.05874747341281E-08"
+        iyz="1.42569882452228E-24"
+        izz="1.65114577571954E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_2_j"
+    type="continuous">
+    <origin
+      xyz="0 0.0133685634596072 -0.0025"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R1_2_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R2_2_Link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -1.11022302462516E-16 -1.98386658940841E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341278E-08"
+        ixy="0"
+        ixz="-9.55924430107621E-25"
+        iyy="3.05874747341278E-08"
+        iyz="-1.76868219588939E-25"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_2_j"
+    type="continuous">
+    <origin
+      xyz="0.0133685634596074 0 -0.0025"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R2_2_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R3_2_Link">
+    <inertial>
+      <origin
+        xyz="0 -8.84708972748172E-17 -1.98386662930705E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341274E-08"
+        ixy="-9.953535056356E-27"
+        ixz="8.27180612553028E-25"
+        iyy="3.05874747341274E-08"
+        iyz="1.55879262470669E-26"
+        izz="1.65114577571941E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R3_2_j"
+    type="continuous">
+    <origin
+      xyz="0 -0.0133685634596072 -0.00250000000000006"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R3_2_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R4_2_Link">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -2.77555756156289E-17 1.98386658958188E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341277E-08"
+        ixy="-1.15805285757424E-23"
+        ixz="6.8798389808681E-25"
+        iyy="3.05874747341278E-08"
+        iyz="1.65416297337148E-25"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R4_2_j"
+    type="continuous">
+    <origin
+      xyz="-0.0133685634596074 0 -0.00250000000000006"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R4_2_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R5_2_Link">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 -5.70377078901174E-15 1.69291362456248E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341274E-08"
+        ixy="1.65436122510606E-24"
+        ixz="-4.13590306276514E-24"
+        iyy="3.05874747341274E-08"
+        iyz="1.65436122510606E-24"
+        izz="1.65114577571938E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R5_2_j"
+    type="continuous">
+    <origin
+      xyz="0.00945300499410812 0.00945299875992465 -0.0155"
+      rpy="0.785398163397448 1.57079630572147 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R5_2_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R6_2_Link">
+    <inertial>
+      <origin
+        xyz="1.37769240460273E-11 -2.70055383749801E-08 -1.4920541860225E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341277E-08"
+        ixy="8.27180612553028E-25"
+        ixz="1.4475660719678E-23"
+        iyy="3.05874747341277E-08"
+        iyz="-8.68539643180679E-24"
+        izz="1.65114577571945E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R6_2_j"
+    type="continuous">
+    <origin
+      xyz="0.0094631503664131 -0.00946098187260521 -0.0154999999862231"
+      rpy="2.357722772005 1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R6_2_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R7_2_Link">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 3.05311331771918E-14 -2.20181173016254E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.0587474734128E-08"
+        ixy="0"
+        ixz="1.32348898008484E-23"
+        iyy="3.0587474734128E-08"
+        iyz="1.24077091882954E-24"
+        izz="1.65114577571948E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R7_2_j"
+    type="continuous">
+    <origin
+      xyz="-0.00945300235838223 -0.00945300139565965 -0.0155"
+      rpy="2.35619449019235 -1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R7_2_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R8_2_Link">
+    <inertial>
+      <origin
+        xyz="1.37781452913543E-11 1.27311119687973E-05 2.19477151498088E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341273E-08"
+        ixy="1.65436122510606E-24"
+        ixz="1.40620704134015E-23"
+        iyy="3.05874747341273E-08"
+        iyz="1.65436122510606E-24"
+        izz="1.65114577571937E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R8_2_j"
+    type="continuous">
+    <origin
+      xyz="-0.00943745529142354 0.00946851017358947 -0.0155000000137783"
+      rpy="0.783869881584792 -1.5707963267949 0" />
+    <parent
+      link="Wheel_2_Link" />
+    <child
+      link="R8_2_Link" />
+    <axis
+      xyz="0 0.00152828119574652 -0.999998832177611" />
+  </joint>
+  <link
+    name="Wheel_3_Link">
+    <inertial>
+      <origin
+        xyz="-7.99038645218908E-06 9.97938771174489E-07 -0.00900540348345191"
+        rpy="0 0 0" />
+      <mass
+        value="0.00633897374893947" />
+      <inertia
+        ixx="5.96612355761527E-07"
+        ixy="1.48206047681721E-10"
+        ixz="-2.22744221399469E-10"
+        iyy="5.9713604955066E-07"
+        iyz="3.77455677673357E-11"
+        izz="9.07856943868467E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_3_j"
+    type="continuous">
+    <origin
+      xyz="-0.0837132034355964 0.0837132034355965 -0.02"
+      rpy="1.5707963267949 0 -2.35619449019234" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_3_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R1_3_Link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -6.59194920871187E-17 2.16518352968986E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.0587474734128E-08"
+        ixy="8.27180612553028E-25"
+        ixz="-9.92616735063633E-24"
+        iyy="3.0587474734128E-08"
+        iyz="-2.06795153138257E-25"
+        izz="1.6511457757195E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_3_j"
+    type="continuous">
+    <origin
+      xyz="0.000130190385305456 0.0133679295119745 -0.0025"
+      rpy="-1.57079632679491 1.56105806399409 -1.5805350513866" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R1_3_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R2_3_Link">
+    <inertial>
+      <origin
+        xyz="0 -1.11022302462516E-16 -1.98386658906147E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341271E-08"
+        ixy="3.30872245021211E-24"
+        ixz="1.88054342385102E-24"
+        iyy="3.05874747341271E-08"
+        iyz="-2.95329328075573E-24"
+        izz="1.65114577571933E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_3_j"
+    type="continuous">
+    <origin
+      xyz="0.0133679295235075 -0.000130189201123525 -0.00250000000000006"
+      rpy="1.58053505138658 1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R2_3_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R3_3_Link">
+    <inertial>
+      <origin
+        xyz="0 -9.0205620750794E-17 -1.98386662930705E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341271E-08"
+        ixy="-5.55761974059065E-25"
+        ixz="-1.24077091882954E-23"
+        iyy="3.05874747341271E-08"
+        iyz="1.64789887657048E-24"
+        izz="1.65114577571932E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R3_3_j"
+    type="continuous">
+    <origin
+      xyz="-0.000130189201123593 -0.0133679295235073 -0.0025"
+      rpy="3.1318539289981 -1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R3_3_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R4_3_Link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 -2.77555756156289E-17 1.98386658958188E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341277E-08"
+        ixy="-1.15805285757424E-23"
+        ixz="1.37001788954095E-24"
+        iyy="3.05874747341278E-08"
+        iyz="1.27308266150739E-24"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R4_3_j"
+    type="continuous">
+    <origin
+      xyz="-0.0133679294943171 0.00013019219838855 -0.00250000000000006"
+      rpy="1.56105760220321 -1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R4_3_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R5_3_Link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 -5.71764857681956E-15 1.69291361901136E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341281E-08"
+        ixy="0"
+        ixz="6.61744490042422E-24"
+        iyy="3.05874747341281E-08"
+        iyz="1.65436122510606E-24"
+        izz="1.65114577571954E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R5_3_j"
+    type="continuous">
+    <origin
+      xyz="0.00954461541941373 0.00936049173223605 -0.0155"
+      rpy="0.795136887989139 1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R5_3_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R6_3_Link">
+    <inertial>
+      <origin
+        xyz="1.37768962904516E-11 -2.70055384166135E-08 -1.49205418599474E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341281E-08"
+        ixy="0"
+        ixz="-3.30872245021211E-24"
+        iyy="3.0587474734128E-08"
+        iyz="-1.24077091882954E-24"
+        izz="1.6511457757195E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R6_3_j"
+    type="continuous">
+    <origin
+      xyz="0.00937056517393026 -0.00955269078177626 -0.0154999999862231"
+      rpy="2.36746149659669 1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R6_3_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R7_3_Link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 3.05311331771918E-14 -2.2018117259992E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341275E-08"
+        ixy="6.45200877791362E-23"
+        ixz="-2.8951321439356E-24"
+        iyy="3.05874747341275E-08"
+        iyz="4.96308367531817E-24"
+        izz="1.65114577571942E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R7_3_j"
+    type="continuous">
+    <origin
+      xyz="-0.00954461280948127 -0.00936049439351419 -0.0155"
+      rpy="2.34645576560066 -1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R7_3_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R8_3_Link">
+    <inertial>
+      <origin
+        xyz="1.37782008025056E-11 1.27311119688389E-05 2.19477151498365E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341281E-08"
+        ixy="2.48154183765908E-24"
+        ixz="-1.3648480107125E-23"
+        iyy="3.05874747341281E-08"
+        iyz="1.3648480107125E-23"
+        izz="1.65114577571953E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R8_3_j"
+    type="continuous">
+    <origin
+      xyz="-0.00934479800253599 0.00955996849245784 -0.0155000000137783"
+      rpy="0.774131156993104 -1.5707963267949 0" />
+    <parent
+      link="Wheel_3_Link" />
+    <child
+      link="R8_3_Link" />
+    <axis
+      xyz="0 0.00152828121828827 -0.999998832177577" />
+  </joint>
+  <link
+    name="Wheel_4_Link">
+    <inertial>
+      <origin
+        xyz="6.25600068240861E-06 -5.07652483202822E-06 -0.00899453045115985"
+        rpy="0 0 0" />
+      <mass
+        value="0.00633896054307936" />
+      <inertia
+        ixx="5.96814501768612E-07"
+        ixy="2.59244835691331E-10"
+        ixz="-1.81144896767638E-10"
+        iyy="5.97048371457117E-07"
+        iyz="1.34498847542479E-10"
+        izz="9.07971540113775E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/Wheel_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_4_j"
+    type="continuous">
+    <origin
+      xyz="-0.0837132034355963 -0.0837132034355966 -0.02"
+      rpy="1.5707963267949 0 -0.785398163397448" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_4_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R1_4_Link">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-18 -5.7072402359637E-15 -1.69291362039914E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.0587474734127E-08"
+        ixy="1.34416849539867E-24"
+        ixz="-2.48154183765908E-24"
+        iyy="3.0587474734127E-08"
+        iyz="-1.45402842050337E-24"
+        izz="1.65114577571932E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R1_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_4_j"
+    type="continuous">
+    <origin
+      xyz="0.000144743331508629 0.0133677798583667 -0.0025"
+      rpy="-3.130597726294 1.57079631189374 3.14159265358979" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R1_4_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R2_4_Link">
+    <inertial>
+      <origin
+        xyz="1.37782354969751E-11 -1.27311119688389E-05 -2.19477151498469E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341278E-08"
+        ixy="3.30872245021211E-24"
+        ixz="-2.25535963891411E-24"
+        iyy="3.05874747341278E-08"
+        iyz="-2.70772403640405E-24"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R2_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_4_j"
+    type="continuous">
+    <origin
+      xyz="0.0133679904995193 -0.000122789615784475 -0.00249999998622174"
+      rpy="1.58009572802385 1.5707963267949 0" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R2_4_Link" />
+    <axis
+      xyz="0 -0.00152828121774706 0.999998832177578" />
+  </joint>
+  <link
+    name="R3_4_Link">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 3.05554193058555E-14 2.20181173016254E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341275E-08"
+        ixy="0"
+        ixz="3.30872245021211E-24"
+        iyy="3.05874747341275E-08"
+        iyz="1.46695311757451E-24"
+        izz="1.65114577571942E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R3_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R3_4_j"
+    type="continuous">
+    <origin
+      xyz="-0.000144747058776012 -0.0133677798180139 -0.00250000000000001"
+      rpy="3.13076497054819 -1.5707963267949 0" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R3_4_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R4_4_Link">
+    <inertial>
+      <origin
+        xyz="1.37769101682395E-11 2.70055384166135E-08 1.49205418599821E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341275E-08"
+        ixy="-1.65436122510606E-24"
+        ixz="3.82571033305775E-24"
+        iyy="3.05874747341275E-08"
+        iyz="2.47507948912351E-24"
+        izz="1.6511457757194E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R4_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R4_4_j"
+    type="continuous">
+    <origin
+      xyz="-0.0133805812315059 0.000146419801193695 -0.00250000001377692"
+      rpy="-1.58008364717444 -1.57079631189374 0" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R4_4_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R5_4_Link">
+    <inertial>
+      <origin
+        xyz="-3.46944695195361E-17 -6.93889390390723E-17 -2.1651835269143E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341272E-08"
+        ixy="0"
+        ixz="1.24077091882954E-24"
+        iyy="3.05874747341272E-08"
+        iyz="2.8951321439356E-24"
+        izz="1.65114577571935E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R5_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R5_4_j"
+    type="continuous">
+    <origin
+      xyz="0.00955480008159457 0.00935009542059886 -0.0155"
+      rpy="-2.38321493937961 1.57079631189374 3.14159265358979" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R5_4_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R6_4_Link">
+    <inertial>
+      <origin
+        xyz="-1.17961196366423E-16 4.16333634234434E-17 -1.98386659044925E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341271E-08"
+        ixy="-8.27180612553028E-25"
+        ixz="4.13590306276514E-24"
+        iyy="3.05874747341271E-08"
+        iyz="-1.24077091882954E-24"
+        izz="1.65114577571933E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R6_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R6_4_j"
+    type="continuous">
+    <origin
+      xyz="0.00935009671650983 -0.0095547988134478 -0.0155"
+      rpy="-0.785398163397448 1.57079630572147 3.14159265358979" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R6_4_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="R7_4_Link">
+    <inertial>
+      <origin
+        xyz="2.08166817117217E-17 -9.71445146547012E-17 1.98386662791927E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341278E-08"
+        ixy="-1.65436122510606E-24"
+        ixz="7.85821581925376E-24"
+        iyy="3.05874747341278E-08"
+        iyz="0"
+        izz="1.65114577571946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R7_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R7_4_j"
+    type="continuous">
+    <origin
+      xyz="-0.00955480090986172 -0.00935009457419843 -0.0155"
+      rpy="2.34536680715074 -1.5707963267949 0" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R7_4_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R8_4_Link">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 8.32667268468867E-17 1.98386659044925E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00124171276885342" />
+      <inertia
+        ixx="3.05874747341275E-08"
+        ixy="0"
+        ixz="1.03397576569128E-23"
+        iyy="3.05874747341275E-08"
+        iyz="3.30872245021211E-24"
+        izz="1.65114577571942E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnirobot/meshes/R8_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R8_4_j"
+    type="continuous">
+    <origin
+      xyz="-0.00935009457419866 0.00955480090986175 -0.0155"
+      rpy="-2.35619449019234 -1.57079630572147 0" />
+    <parent
+      link="Wheel_4_Link" />
+    <child
+      link="R8_4_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>Wheel_3_j</leftFrontJoint>
+      <rightFrontJoint>Wheel_1_j</rightFrontJoint>
+      <leftRearJoint>Wheel_2_j</leftRearJoint>
+      <rightRearJoint>Wheel_4_j</rightRearJoint>
+      <wheelSeparation>0.21878</wheelSeparation>
+      <wheelDiameter>0.038</wheelDiameter>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <torque>20</torque>
+      <topicName>cmd_vel</topicName>
+      <broadcastTF>true</broadcastTF>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
+    </plugin>
+  </gazebo>
+
+  <!--<gazebo>
+        <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <odometryRate>20.0</odometryRate>
+            <robotBaseFrame>base_link</robotBaseFrame>
+        </plugin>
+  </gazebo>-->
+
+  <xacro:macro name="inertial_cylinder" params="mass length radius *origin">
+        <inertial>
+            <xacro:insert_block name="origin"/>
+            <mass value="${mass}" />
+            <inertia ixx="${(1/12) * mass * (3*radius*radius + length*length)}" ixy="0.0" ixz="0.0"
+                    iyy="${(1/12) * mass * (3*radius*radius + length*length)}" iyz="0.0"
+                    izz="${(1/2) * mass * (radius*radius)}" />
+        </inertial>
+  </xacro:macro>
+
+  <!--LIDAR-->
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_frame"/>
+    <origin xyz="0.0 0 0.005" rpy="0 0 0"/>
+  </joint>
+
+    <link name="laser_frame">
+        <visual>
+            <geometry>
+                <cylinder radius="0.02" length="0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.02" length="0.01"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="0.1" length="0.01" radius="0.02">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+  <gazebo reference="laser_frame">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>719</samples>
+            <resolution>1</resolution>
+            <min_angle>-${pi}</min_angle>
+            <max_angle>${pi}</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.05</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>laser_frame</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="laser_frame">
+  <material>Gazebo/Red</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+  <xacro:property name="body_color" value="Gazebo/Silver" />
+
+  <xacro:macro name="roller" params="name parent">
+    <gazebo reference="R${name}_${parent}_Link">
+      <material>Gazebo/White</material>
+      <mu1>1.01</mu1>
+      <mu2>1.01</mu2>
+      <selfCollide>true</selfCollide>
+      <!--<slip1>0</slip1>
+      <slip2>0</slip2>
+      <kp value="10000000.0" />
+      <kd value="1.0"/>
+      <fdir1>0 0 1 </fdir1>
+      <minDepth>0.001</minDepth>-->
+    </gazebo>
+
+    <gazebo reference="R${name}_${parent}_j">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="group" params="name color">
+    <xacro:roller name="6" parent="${name}"/>
+    <xacro:roller name="5" parent="${name}"/>
+    <xacro:roller name="4" parent="${name}"/>
+    <xacro:roller name="3" parent="${name}"/>
+    <xacro:roller name="2" parent="${name}"/>
+    <xacro:roller name="1" parent="${name}"/>
+    <xacro:roller name="8" parent="${name}"/>
+    <xacro:roller name="7" parent="${name}"/>
+    <gazebo reference="Wheel_${name}_Link">
+      <material>${color}</material>
+      <mu1>1.01</mu1>
+      <mu2>1.01</mu2>
+      <selfCollide>true</selfCollide>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:group name="1" color="Gazebo/Blue"/>
+  <xacro:group name="2" color="Gazebo/Green"/>
+  <xacro:group name="3" color="Gazebo/Orange"/>
+  <xacro:group name="4" color="Gazebo/Yellow"/>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Turquoise</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+</robot>
