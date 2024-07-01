@@ -21,7 +21,7 @@ Follow these steps to set up the project on your PC:
 1. **Clone the Repository:**
 	Clone the repository inside the **/src** folder of your workspace. (e.g. ~/catkin_ws/src)
    ```bash
-   git clone <link_of_github_page>
+   git clone (https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking.git)
    ```
 2. **Build the Workspace:**
    Navigate to your catkin workspace and build the project:
