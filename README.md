@@ -9,8 +9,10 @@ This project simulates an omniwheel mobile robot performing autonomous parking i
 1. **URDF Creation:** 
    - Created a URDF file using the SolidWorks to URDF conversion plugin.
    - Added a LiDAR sensor and control plugins to the URDF.
+
    ![Gazebo](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/59167cee-e64d-424b-8e2a-c0ce48c9a6f1)
-2. **Autonomous Parking:**
+
+3. **Autonomous Parking:**
    - Utilized the ROS navigation stack.
    - Created a map of the world using `slam_gmapping`.
    - Configured parameters for the `map_server`, `amcl`, and `move_base` nodes to enable autonomous parking.
@@ -43,6 +45,7 @@ Follow these steps to set up the project on your PC:
 	rosrun omniwheel send_goal <x y w>
 	```
 	- Ensure that the coordinates you provide do not correspond to locations with obstacles on the map.
+
 	![send_goal](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/08d347fb-2aa0-4975-adba-777420d43008)
 
 5. **Send Navigation Goal via RViz:**
@@ -53,13 +56,16 @@ Follow these steps to set up the project on your PC:
 	- An RViz window will open.
 
 	![RViz](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/b5e418a9-438d-4198-9d2e-1dc18e8abcf4)
+
 	- Perform **Initial Pose Estimation** using the `2D Pose Estimate` button in the RViz menu.
+
 	![Screenshot 2024-07-01 103830](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/a00ab99a-d732-4308-9389-6ec73db3b2d9)
+
 	- Click on the map where the actual robot is located and drag the large green arrow toward the direction where the robot is facing.
  	- Launch keyboard teleoperation node to precisely locate the robot on the map.
-		```bash
+	```bash
  		rosrun teleop_twist_keyboard teleop_twist_keyboard.py
-        	```
+   ```
 	- Move the robot back and forth a bit to collect the surrounding environment information and narrow down the estimated location of the robot on the map which is displayed with tiny red arrows.
 
 	![localisation-gif](https://github.com/RushiKP14/ROS-Omniwheel-Robot-Autonomous-Parking/assets/156124606/5be56b12-f398-44fe-85ba-5aa128aec5eb)
